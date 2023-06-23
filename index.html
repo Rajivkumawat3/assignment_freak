@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Left Panel Navigation</title>
+  <style>
+    body {
+      display: flex;
+    }
+    
+    #left-panel {
+      width: 200px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    
+    #content {
+      flex: 1;
+      padding: 20px;
+    }
+    
+    .component {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    
+    .component:hover {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="left-panel">
+    <div class="component" onclick="showContent('home')">Home</div>
+    <div class="component" onclick="showContent('contact')">Contact</div>
+    <div class="component" onclick="showContent('information')">Information</div>
+    <div class="component" onclick="showContent('guide')">Guide</div>
+  </div>
+  
+  <div id="content">
+    <h2>Welcome to the Left Panel Navigation</h2>
+    <p>Select a component from the left panel to display its content here.</p>
+  </div>
+  
+  <script>
+    function showContent(component) {
+      var contentDiv = document.getElementById('content');
+      
+      if (component === 'home') {
+        contentDiv.innerHTML = '<h2>Home</h2><p>This is the home page content.</p>';
+      } else if (component === 'contact') {
+        contentDiv.innerHTML = '<h2>Contact</h2><p>This is the contact information.</p>';
+      } else if (component === 'information') {
+        contentDiv.innerHTML = '<h2>Information</h2><p>This is some information content.</p>';
+      } else if (component === 'guide') {
+        contentDiv.innerHTML = '<h2>Guide</h2><p>This is a guide with detailed instructions.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
